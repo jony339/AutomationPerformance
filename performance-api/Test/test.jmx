@@ -5,10 +5,12 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Envio mail POS">
-        <intProp name="ThreadGroup.num_threads">300</intProp>
+        <stringProp name="ThreadGroup.num_threads">${hilos}</stringProp>
         <intProp name="ThreadGroup.ramp_time">60</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
@@ -227,8 +229,8 @@ if (manager != null) {
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
     &quot;correo_cliente&quot;: &quot;mailtest@gmail.com&quot;,&#xd;
-    &quot;id_comp_venta&quot;: 15899533,&#xd;
-    &quot;token_comp&quot;: &quot;fb6e78bc7b2c93d514801de0a12749fd&quot;&#xd;
+    &quot;id_comp_venta&quot;: 15909940,&#xd;
+    &quot;token_comp&quot;: &quot;b0bddd67794bdfff1bbce1c37a5ca524&quot;&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -245,7 +247,7 @@ if (manager != null) {
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="resultados">
+          <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="resultados" enabled="false">
             <boolProp name="ResultCollector.error_logging">false</boolProp>
             <objProp>
               <name>saveConfig</name>
@@ -447,6 +449,11 @@ if (manager != null) {
             <stringProp name="Argument.value">${__P(cookies)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
             <stringProp name="Argument.desc">${__P(cookies)}</stringProp>
+          </elementProp>
+          <elementProp name="hilos" elementType="Argument">
+            <stringProp name="Argument.name">hilos</stringProp>
+            <stringProp name="Argument.value">${__P(hilos)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
       </Arguments>
