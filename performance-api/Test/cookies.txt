@@ -1,2 +1,0 @@
-# JMeter generated Cookie file
-staging.duxsoftware.com.ar	TRUE	/	TRUE	0	JSESSIONID	${cookies}
